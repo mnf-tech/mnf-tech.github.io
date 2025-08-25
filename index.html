@@ -5,73 +5,253 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MFG-TECH — Smart AI Solutions for All Industries</title>
   <meta name="description" content="Smart tools for smarter manufacturing — dashboards, QMS, inventory & WIP, SPC analytics, and AI solutions. From data to decisions — instantly." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="keywords" content="manufacturing technology, AI solutions, quality management, inventory management, predictive maintenance">
+  <meta name="author" content="MFG-TECH">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourusername.github.io/">
+  <meta property="og:title" content="MFG-TECH — Smart AI Solutions for All Industries">
+  <meta property="og:description" content="Smart tools for smarter manufacturing — dashboards, QMS, inventory & WIP, SPC analytics, and AI solutions.">
+  <meta property="og:image" content="https://yourusername.github.io/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourusername.github.io/">
+  <meta property="twitter:title" content="MFG-TECH — Smart AI Solutions for All Industries">
+  <meta property="twitter:description" content="Smart tools for smarter manufacturing — dashboards, QMS, inventory & WIP, SPC analytics, and AI solutions.">
+  <meta property="twitter:image" content="https://yourusername.github.io/og-image.jpg">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- AOS Animation Library -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --secondary: #7e22ce;
+      --accent: #f97316;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(to right, var(--primary-dark), #6b21a8);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+    }
+    
+    .feature-card {
+      transition: all 0.3s ease;
+      border-top: 3px solid transparent;
+    }
+    
+    .feature-card:hover {
+      border-top: 3px solid var(--primary);
+      transform: translateY(-5px);
+    }
+    
+    .product-card {
+      transition: all 0.3s ease;
+      background: white;
+    }
+    
+    .product-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transform: translateY(-5px);
+    }
+    
+    .client-logo {
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+    
+    .client-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    
+    .testimonial-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    }
+    
+    /* Pattern background */
+    .pattern-bg {
+      background-color: #f0f9ff;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232564eb' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
 
   <!-- Header -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-white shadow transition duration-500">
-    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-      <h1 class="font-bold text-blue-700" data-aos="fade-down">MFG-TECH</h1>
-      <nav class="space-x-6 text-sm font-medium" data-aos="fade-down" data-aos-delay="150">
+  <header class="fixed top-0 inset-x-0 z-50 bg-white shadow-md transition duration-500">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4 lg:px-8">
+      <div class="flex items-center">
+        <div class="h-10 w-10 rounded-lg bg-blue-700 flex items-center justify-center mr-3">
+          <span class="text-white font-bold text-xl">M</span>
+        </div>
+        <h1 class="font-bold text-blue-700 text-xl" data-aos="fade-down">MFG-TECH</h1>
+      </div>
+      <nav class="hidden md:flex space-x-8 text-sm font-medium" data-aos="fade-down" data-aos-delay="150">
         <a href="#why" class="hover:text-blue-600 transition">Why Us</a>
         <a href="#suite" class="hover:text-blue-600 transition">Product Suite</a>
+        <a href="#clients" class="hover:text-blue-600 transition">Clients</a>
+        <a href="#testimonials" class="hover:text-blue-600 transition">Testimonials</a>
         <a href="#future" class="hover:text-blue-600 transition">Future</a>
         <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
       </nav>
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-slate-700">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden absolute inset-x-0 top-full bg-white shadow-lg py-4 px-6">
+      <div class="flex flex-col space-y-4">
+        <a href="#why" class="hover:text-blue-600 transition">Why Us</a>
+        <a href="#suite" class="hover:text-blue-600 transition">Product Suite</a>
+        <a href="#clients" class="hover:text-blue-600 transition">Clients</a>
+        <a href="#testimonials" class="hover:text-blue-600 transition">Testimonials</a>
+        <a href="#future" class="hover:text-blue-600 transition">Future</a>
+        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="pt-32 pb-20 bg-gradient-to-r from-blue-50 to-indigo-50">
-    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6">
+  <section id="home" class="pt-32 pb-20 gradient-bg">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6 lg:px-8">
       <div data-aos="fade-right">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 animate-pulse">
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 mb-6">
+          <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+          Transforming Manufacturing with AI
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
           Smart AI Solutions for <span class="text-blue-700">All Industries</span>
         </h1>
         <p class="mt-5 text-lg text-slate-600">Smart tools for smarter manufacturing — Quality, Data, and Automation. Empowering Industry 4.0. From data to decisions — instantly.</p>
-        <div class="mt-8 flex gap-3">
-          <a href="#suite" class="px-5 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition transform hover:scale-105">Explore Product Suite</a>
-          <a href="#contact" class="px-5 py-3 border border-slate-300 rounded-xl hover:border-blue-600 hover:text-blue-700 transition transform hover:scale-105">Talk to Us</a>
+        <div class="mt-8 flex gap-4 flex-wrap">
+          <a href="#suite" class="px-6 py-3 btn-primary text-white rounded-xl shadow-lg font-medium">Explore Product Suite</a>
+          <a href="#contact" class="px-6 py-3 border border-slate-300 rounded-xl hover:border-blue-600 hover:text-blue-700 transition transform hover:scale-105 font-medium flex items-center">
+            <i class="fas fa-calendar-check mr-2"></i> Book a Demo
+          </a>
+        </div>
+        <div class="mt-10 flex items-center space-x-4">
+          <div class="flex -space-x-2">
+            <div class="h-10 w-10 rounded-full border-2 border-white bg-blue-600 flex items-center justify-center text-white font-bold">A</div>
+            <div class="h-10 w-10 rounded-full border-2 border-white bg-green-600 flex items-center justify-center text-white font-bold">B</div>
+            <div class="h-10 w-10 rounded-full border-2 border-white bg-purple-600 flex items-center justify-center text-white font-bold">C</div>
+          </div>
+          <p class="text-sm text-slate-600"><span class="font-semibold">100+</span> companies transformed</p>
         </div>
       </div>
-      <div data-aos="zoom-in" data-aos-delay="300">
-        <img src="https://dummyimage.com/600x400/ffffff/000000&text=Dashboard+Preview" alt="Dashboard Preview" class="rounded-2xl shadow-xl hover:scale-105 transition duration-500" />
+      <div data-aos="zoom-in" data-aos-delay="300" class="relative">
+        <div class="absolute -top-4 -right-4 h-32 w-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+        <div class="absolute -bottom-8 -left-4 h-32 w-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
+        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="AI Manufacturing Dashboard" class="rounded-2xl shadow-xl transform hover:scale-105 transition duration-700" />
+        <div class="absolute bottom-4 left-4 bg-white rounded-lg shadow-md p-3 flex items-center">
+          <div class="h-3 w-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+          <span class="text-sm font-medium">Live data streaming</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section id="clients" class="py-12 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-center text-sm font-medium text-slate-500 mb-8">TRUSTED BY INDUSTRY LEADERS</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+        <div class="client-logo flex justify-center">
+          <div class="h-12 w-32 bg-gray-200 rounded flex items-center justify-center font-semibold text-gray-500">Client 1</div>
+        </div>
+        <div class="client-logo flex justify-center">
+          <div class="h-12 w-32 bg-gray-200 rounded flex items-center justify-center font-semibold text-gray-500">Client 2</div>
+        </div>
+        <div class="client-logo flex justify-center">
+          <div class="h-12 w-32 bg-gray-200 rounded flex items-center justify-center font-semibold text-gray-500">Client 3</div>
+        </div>
+        <div class="client-logo flex justify-center">
+          <div class="h-12 w-32 bg-gray-200 rounded flex items-center justify-center font-semibold text-gray-500">Client 4</div>
+        </div>
+        <div class="client-logo flex justify-center">
+          <div class="h-12 w-32 bg-gray-200 rounded flex items-center justify-center font-semibold text-gray-500">Client 5</div>
+        </div>
+        <div class="client-logo flex justify-center">
+          <div class="h-12 w-32 bg-gray-200 rounded flex items-center justify-center font-semibold text-gray-500">Client 6</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Why Us -->
-  <section id="why" class="py-20">
+  <section id="why" class="py-20 pattern-bg">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-10 text-center" data-aos="fade-up">Why Digital Transformation?</h2>
+      <h2 class="text-3xl font-bold mb-4 text-center" data-aos="fade-up">Why Digital Transformation?</h2>
+      <p class="text-slate-600 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Embrace the future of manufacturing with our cutting-edge solutions designed to optimize your operations and drive growth.</p>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-6 border rounded-2xl hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up">
-          <h3 class="font-semibold">AI-driven Insights</h3>
+        <div class="p-6 border rounded-2xl bg-white feature-card" data-aos="fade-up">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+            <i class="fas fa-brain text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg">AI-driven Insights</h3>
           <p class="mt-2 text-sm text-slate-600">From raw signals to actionable recommendations.</p>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="font-semibold">Realtime Production Insights</h3>
+        <div class="p-6 border rounded-2xl bg-white feature-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+            <i class="fas fa-chart-line text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Realtime Production Insights</h3>
           <p class="mt-2 text-sm text-slate-600">See bottlenecks and act before they escalate.</p>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="font-semibold">Optimized Resource Utilisation</h3>
+        <div class="p-6 border rounded-2xl bg-white feature-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+            <i class="fas fa-cogs text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Optimized Resource Utilisation</h3>
           <p class="mt-2 text-sm text-slate-600">Do more with less across machines and labor.</p>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="font-semibold">Paperless</h3>
+        <div class="p-6 border rounded-2xl bg-white feature-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+            <i class="fas fa-tree text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Paperless Operations</h3>
           <p class="mt-2 text-sm text-slate-600">Lower carbon footprints with digital workflows.</p>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-          <h3 class="font-semibold">Uptime</h3>
+        <div class="p-6 border rounded-2xl bg-white feature-card" data-aos="fade-up" data-aos-delay="400">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+            <i class="fas fa-tachometer-alt text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Maximize Uptime</h3>
           <p class="mt-2 text-sm text-slate-600">Preventive maintenance and alerting reduce downtime.</p>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-xl transition transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
-          <h3 class="font-semibold">Traceability</h3>
+        <div class="p-6 border rounded-2xl bg-white feature-card" data-aos="fade-up" data-aos-delay="500">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+            <i class="fas fa-search text-xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg">Complete Traceability</h3>
           <p class="mt-2 text-sm text-slate-600">Track materials, products, and quality in real-time.</p>
         </div>
       </div>
@@ -81,10 +261,16 @@
   <!-- Product Suite -->
   <section id="suite" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-10 text-center" data-aos="fade-up">Product Suite under MNF-TECH</h2>
+      <h2 class="text-3xl font-bold mb-4 text-center" data-aos="fade-up">Our Product Suite</h2>
+      <p class="text-slate-600 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Comprehensive solutions designed to address every aspect of modern manufacturing.</p>
       <div class="grid lg:grid-cols-2 gap-6">
-        <div class="p-6 border rounded-2xl hover:shadow-lg transition transform hover:scale-105" data-aos="flip-left">
-          <h3 class="text-xl font-semibold">MFG-VIEW Dashboards (Power BI)</h3>
+        <div class="p-6 border rounded-2xl product-card" data-aos="flip-left">
+          <div class="flex items-start mb-4">
+            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h3 class="text-xl font-semibold">MFG-VIEW Dashboards (Power BI)</h3>
+          </div>
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
             <li>Live sensor data tracking</li>
             <li>Production & Quality KPIs</li>
@@ -92,32 +278,52 @@
             <li>HR Analytics</li>
           </ul>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-lg transition transform hover:scale-105" data-aos="flip-right">
-          <h3 class="text-xl font-semibold">MFG-QMS — Audit & Document Management</h3>
+        <div class="p-6 border rounded-2xl product-card" data-aos="flip-right">
+          <div class="flex items-start mb-4">
+            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h3 class="text-xl font-semibold">MFG-QMS — Audit & Document Management</h3>
+          </div>
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
             <li>Plan & schedule audits</li>
             <li>Track NCs & CAPA</li>
             <li>ISO/IATF compliance</li>
           </ul>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-lg transition transform hover:scale-105" data-aos="flip-left" data-aos-delay="100">
-          <h3 class="text-xl font-semibold">MFG-INV — Inventory & WIP Management</h3>
+        <div class="p-6 border rounded-2xl product-card" data-aos="flip-left" data-aos-delay="100">
+          <div class="flex items-start mb-4">
+            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+              <i class="fas fa-boxes"></i>
+            </div>
+            <h3 class="text-xl font-semibold">MFG-INV — Inventory & WIP Management</h3>
+          </div>
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
             <li>Realtime WIP visibility</li>
             <li>Barcode/RFID integration</li>
             <li>Auto reorder alerts</li>
           </ul>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-lg transition transform hover:scale-105" data-aos="flip-right" data-aos-delay="100">
-          <h3 class="text-xl font-semibold">MFG-SPC — Python-Based SPC Tools</h3>
+        <div class="p-6 border rounded-2xl product-card" data-aos="flip-right" data-aos-delay="100">
+          <div class="flex items-start mb-4">
+            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="text-xl font-semibold">MFG-SPC — Python-Based SPC Tools</h3>
+          </div>
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
             <li>Realtime control charts</li>
             <li>CP, CPK, capability indices</li>
             <li>Defects capture & Pareto</li>
           </ul>
         </div>
-        <div class="p-6 border rounded-2xl hover:shadow-lg transition transform hover:scale-105 lg:col-span-2" data-aos="zoom-in-up">
-          <h3 class="text-xl font-semibold">MFG-AI — AI-Based Solutions</h3>
+        <div class="p-6 border rounded-2xl product-card lg:col-span-2" data-aos="zoom-in-up">
+          <div class="flex items-start mb-4">
+            <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="text-xl font-semibold">MFG-AI — AI-Based Solutions</h3>
+          </div>
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700 space-y-1">
             <li>Predictive maintenance</li>
             <li>Predictive quality</li>
@@ -128,41 +334,269 @@
     </div>
   </section>
 
-  <!-- Future -->
-  <section id="future" class="py-20 bg-gradient-to-r from-indigo-50 to-blue-50">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Future Plans</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 border rounded-2xl hover:shadow-md transition" data-aos="flip-up">Predictive Maintenance</div>
-        <div class="p-6 border rounded-2xl hover:shadow-md transition" data-aos="flip-up" data-aos-delay="100">Predictive Quality</div>
-        <div class="p-6 border rounded-2xl hover:shadow-md transition" data-aos="flip-up" data-aos-delay="200">Production Optimization</div>
-        <div class="p-6 border rounded-2xl hover:shadow-md transition" data-aos="flip-up" data-aos-delay="300">Conversational Dashboards</div>
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4 text-center" data-aos="fade-up">What Our Clients Say</h2>
+      <p class="text-slate-600 text-center max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">Hear from manufacturers who have transformed their operations with our solutions.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl testimonial-card shadow-sm" data-aos="fade-up">
+          <div class="flex items-center mb-4">
+            <div class="h-12 w-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-3">JD</div>
+            <div>
+              <h4 class="font-semibold">John Doe</h4>
+              <p class="text-sm text-slate-500">Operations Director, TechMfg Inc.</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm">"The predictive maintenance system has reduced our downtime by 45% and saved us thousands in unexpected repairs."</p>
+          <div class="flex mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl testimonial-card shadow-sm" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <div class="h-12 w-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-3">SM</div>
+            <div>
+              <h4 class="font-semibold">Sarah Miller</h4>
+              <p class="text-sm text-slate-500">Quality Manager, PrecisParts</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm">"The SPC tools have revolutionized our quality control process. We've seen a 30% reduction in defects in just three months."</p>
+          <div class="flex mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        <div class="p-6 rounded-2xl testimonial-card shadow-sm" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <div class="h-12 w-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-3">RJ</div>
+            <div>
+              <h4 class="font-semibold">Robert Johnson</h4>
+              <p class="text-sm text-slate-500">CEO, AutoComponents Ltd.</p>
+            </div>
+          </div>
+          <p class="text-slate-600 text-sm">"The inventory management system has optimized our stock levels, reducing carrying costs by 22% while improving availability."</p>
+          <div class="flex mt-4 text-yellow-400">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Future -->
+  <section id="future" class="py-20 gradient-bg">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Future Innovations</h2>
+      <p class="text-slate-600 max-w-3xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="100">We're constantly developing new solutions to keep your manufacturing operations at the cutting edge.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 border rounded-2xl bg-white hover:shadow-md transition transform hover:-translate-y-1" data-aos="flip-up">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto mb-4">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="font-semibold">Predictive Maintenance</h3>
+        </div>
+        <div class="p-6 border rounded-2xl bg-white hover:shadow-md transition transform hover:-translate-y-1" data-aos="flip-up" data-aos-delay="100">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto mb-4">
+            <i class="fas fa-medal"></i>
+          </div>
+          <h3 class="font-semibold">Predictive Quality</h3>
+        </div>
+        <div class="p-6 border rounded-2xl bg-white hover:shadow-md transition transform hover:-translate-y-1" data-aos="flip-up" data-aos-delay="200">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto mb-4">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 class="font-semibold">Production Optimization</h3>
+        </div>
+        <div class="p-6 border rounded-2xl bg-white hover:shadow-md transition transform hover:-translate-y-1" data-aos="flip-up" data-aos-delay="300">
+          <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto mb-4">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h3 class="font-semibold">Conversational Dashboards</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-blue-700 text-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">Ready to Transform Your Manufacturing Operations?</h2>
+      <p class="text-blue-100 mb-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">Join hundreds of manufacturers who have already digitized their processes with our AI-powered solutions.</p>
+      <a href="#contact" class="px-8 py-4 bg-white text-blue-700 font-medium rounded-xl shadow-lg hover:bg-blue-50 transition transform hover:scale-105 inline-flex items-center" data-aos="zoom-in">
+        <span>Get Started Today</span>
+        <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </section>
+
   <!-- Contact -->
-  <section id="contact" class="py-20 bg-blue-600 text-white">
-    <div class="max-w-4xl mx-auto px-6 text-center" data-aos="zoom-in">
-      <h2 class="text-3xl font-bold">Contact Us</h2>
-      <p class="mt-4">Email: <a href="mailto:info@mfgtech.in" class="underline">info@mfgtech.in</a></p>
-      <p class="mt-2">Phone: <a href="tel:+918657722600" class="underline">+91-8657722600</a></p>
-      <a href="mailto:info@mfgtech.in?subject=Book%20a%20Demo" class="mt-6 inline-block px-6 py-3 bg-white text-blue-600 font-medium rounded-xl shadow hover:bg-blue-50 transition transform hover:scale-105">Book a Demo</a>
+  <section id="contact" class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+          <p class="text-slate-600 mb-8">Have questions about our solutions or ready to schedule a demo? Contact our team today.</p>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Email</h3>
+                <a href="mailto:info@mfgtech.in" class="text-slate-600 hover:text-blue-600">info@mfgtech.in</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Phone</h3>
+                <a href="tel:+918657722600" class="text-slate-600 hover:text-blue-600">+91-8657722600</a>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mr-4">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold">Business Hours</h3>
+                <p class="text-slate-600">Mon-Fri: 9:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-2xl" data-aos="fade-left">
+          <h3 class="text-xl font-semibold mb-6">Send us a message</h3>
+          <form>
+            <div class="mb-4">
+              <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+            </div>
+            <button type="submit" class="w-full px-6 py-3 btn-primary text-white rounded-xl shadow-lg font-medium">Send Message</button>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="py-6 text-center text-slate-600 bg-white">
-    © <span id="year"></span> MFG-TECH Solutions
+  <footer class="py-12 bg-slate-900 text-slate-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center mb-4">
+            <div class="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center mr-2">
+              <span class="text-white font-bold">M</span>
+            </div>
+            <h3 class="font-bold text-white text-lg">MFG-TECH</h3>
+          </div>
+          <p class="text-sm mb-4">Smart AI solutions for modern manufacturing challenges.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="h-8 w-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="h-8 w-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="h-8 w-8 bg-slate-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Products</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#suite" class="hover:text-white transition">MFG-VIEW Dashboards</a></li>
+            <li><a href="#suite" class="hover:text-white transition">MFG-QMS</a></li>
+            <li><a href="#suite" class="hover:text-white transition">MFG-INV</a></li>
+            <li><a href="#suite" class="hover:text-white transition">MFG-SPC</a></li>
+            <li><a href="#suite" class="hover:text-white transition">MFG-AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#why" class="hover:text-white transition">Why Us</a></li>
+            <li><a href="#clients" class="hover:text-white transition">Clients</a></li>
+            <li><a href="#testimonials" class="hover:text-white transition">Testimonials</a></li>
+            <li><a href="#future" class="hover:text-white transition">Future Plans</a></li>
+            <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-white mb-4">Contact</h4>
+          <address class="not-italic text-sm">
+            <p class="mb-2">123 Tech Park</p>
+            <p class="mb-2">Mumbai, 400001</p>
+            <p class="mb-2">India</p>
+            <p class="mb-2"><a href="mailto:info@mfgtech.in" class="hover:text-white transition">info@mfgtech.in</a></p>
+            <p><a href="tel:+918657722600" class="hover:text-white transition">+91-8657722600</a></p>
+          </address>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 mt-10 pt-6 text-sm text-center">
+        © <span id="year"></span> MFG-TECH Solutions. All rights reserved.
+      </div>
+    </div>
   </footer>
+
+  <!-- Floating Chat Button -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button class="h-14 w-14 bg-blue-600 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-blue-700 transition transform hover:scale-110">
+      <i class="fas fa-comment-dots text-xl"></i>
+    </button>
+  </div>
 
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 900, easing: 'ease-in-out', once: true });
+    // Initialize animations
+    AOS.init({ 
+      duration: 800, 
+      easing: 'ease-in-out',
+      once: true,
+      offset: 50
+    });
+    
+    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobile-menu');
+      const menuButton = document.getElementById('mobile-menu-button');
+      
+      if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+        menu.classList.add('hidden');
+      }
+    });
   </script>
 </body>
 </html>
-
-
