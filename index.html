@@ -3,98 +3,74 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MFG-TECH — Smart AI Solutions for All Industries</title>
+  <title>MFGTech — Smart AI Solutions for All Industries</title>
   <meta name="description" content="Smart tools for smarter manufacturing — dashboards, QMS, inventory & WIP, SPC analytics, and AI solutions. From data to decisions — instantly." />
   <meta name="keywords" content="manufacturing technology, AI solutions, quality management, inventory management, predictive maintenance">
-  <meta name="author" content="MFG-TECH">
+  <meta name="author" content="MFGTech">
   
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="MFG-TECH — Smart AI Solutions for All Industries">
+  <meta property="og:title" content="MFGTech — Smart AI Solutions for All Industries">
   <meta property="og:description" content="Smart tools for smarter manufacturing — dashboards, QMS, inventory & WIP, SPC analytics, and AI solutions.">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:title" content="MFG-TECH — Smart AI Solutions for All Industries">
+  <meta property="twitter:title" content="MFGTech — Smart AI Solutions for All Industries">
   <meta property="twitter:description" content="Smart tools for smarter manufacturing — dashboards, QMS, inventory & WIP, SPC analytics, and AI solutions.">
   
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS Animation Library -->
+  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #7e22ce;
-      --accent: #f97316;
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+
+    /* Animated Gradient */
+    .animated-gradient {
+      background: linear-gradient(-45deg, #2563eb, #7e22ce, #f97316, #1d4ed8);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
     }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      scroll-behavior: smooth;
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-    
-    .gradient-bg {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-    }
-    
+
+    /* Floating Logo */
+    @keyframes float { 0% { transform: translateY(0px);} 50% { transform: translateY(-15px);} 100% { transform: translateY(0px);} }
+    .animate-float { animation: float 4s ease-in-out infinite; }
+
+    /* Slow Spin */
+    @keyframes spin-slow { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+    .animate-spin-slow { animation: spin-slow 12s linear infinite; }
+
+    /* Button */
     .btn-primary {
-      background: linear-gradient(to right, var(--primary), var(--secondary));
+      background: linear-gradient(to right, #2563eb, #7e22ce);
       transition: all 0.3s ease;
     }
-    
     .btn-primary:hover {
-      background: linear-gradient(to right, var(--primary-dark), #6b21a8);
-      transform: translateY(-2px);
+      background: linear-gradient(to right, #1d4ed8, #6b21a8);
+      transform: translateY(-2px) scale(1.05);
       box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
     }
-    
-    .feature-card {
-      transition: all 0.3s ease;
-      border-top: 3px solid transparent;
-    }
-    
-    .feature-card:hover {
-      border-top: 3px solid var(--primary);
+
+    /* Hover cards */
+    .feature-card:hover, .product-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
     }
-    
-    .product-card {
-      transition: all 0.3s ease;
-      background: white;
-    }
-    
-    .product-card:hover {
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      transform: translateY(-5px);
-    }
-    
-    .client-logo {
-      filter: grayscale(100%);
-      opacity: 0.6;
-      transition: all 0.3s ease;
-    }
-    
-    .client-logo:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-    }
-    
-    .testimonial-card {
-      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-    }
-    
-    /* Pattern background */
-    .pattern-bg {
-      background-color: #f0f9ff;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232564eb' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    }
+
+    /* Client logos */
+    .client-logo { filter: grayscale(100%); opacity: 0.6; transition: all 0.3s ease; }
+    .client-logo:hover { filter: grayscale(0%); opacity: 1; }
   </style>
 </head>
 <body class="bg-gray-50 text-slate-800">
@@ -103,10 +79,8 @@
   <header class="fixed top-0 inset-x-0 z-50 bg-white shadow-md transition duration-500">
     <div class="max-w-7xl mx-auto flex items-center justify-between p-4 lg:px-8">
       <div class="flex items-center">
-        <div class="h-10 w-10 rounded-lg bg-blue-700 flex items-center justify-center mr-3">
-          <span class="text-white font-bold text-xl">M</span>
-        </div>
-        <h1 class="font-bold text-blue-700 text-xl" data-aos="fade-down">MFG-TECH</h1>
+        <img src="logo.png" alt="MFGTech Logo" class="h-10 w-auto animate-spin-slow mr-3">
+        <h1 class="font-bold text-blue-700 text-xl" data-aos="fade-down">MFGTech</h1>
       </div>
       <nav class="hidden md:flex space-x-8 text-sm font-medium" data-aos="fade-down" data-aos-delay="150">
         <a href="#why" class="hover:text-blue-600 transition">Why Us</a>
@@ -116,61 +90,32 @@
         <a href="#future" class="hover:text-blue-600 transition">Future</a>
         <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
       </nav>
-      <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-slate-700">
-          <i class="fas fa-bars text-xl"></i>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden absolute inset-x-0 top-full bg-white shadow-lg py-4 px-6">
-      <div class="flex flex-col space-y-4">
-        <a href="#why" class="hover:text-blue-600 transition">Why Us</a>
-        <a href="#suite" class="hover:text-blue-600 transition">Product Suite</a>
-        <a href="#clients" class="hover:text-blue-600 transition">Clients</a>
-        <a href="#testimonials" class="hover:text-blue-600 transition">Testimonials</a>
-        <a href="#future" class="hover:text-blue-600 transition">Future</a>
-        <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="home" class="pt-32 pb-20 gradient-bg">
+  <section id="home" class="pt-32 pb-20 animated-gradient text-white relative overflow-hidden">
     <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center px-6 lg:px-8">
       <div data-aos="fade-right">
-        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-700 mb-6">
-          <span class="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+        <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 text-white mb-6">
+          <span class="w-2 h-2 bg-white rounded-full mr-2 animate-ping"></span>
           Transforming Manufacturing with AI
         </div>
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight">
-          Smart AI Solutions for <span class="text-blue-700">All Industries</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-slate-50 leading-tight">
+          Smart AI Solutions for <span class="text-yellow-300">All Industries</span>
         </h1>
-        <p class="mt-5 text-lg text-slate-600">Smart tools for smarter manufacturing — Quality, Data, and Automation. Empowering Industry 4.0. From data to decisions — instantly.</p>
+        <p class="mt-5 text-lg text-slate-200">Smart tools for smarter manufacturing — Quality, Data, and Automation. Empowering Industry 4.0. From data to decisions — instantly.</p>
         <div class="mt-8 flex gap-4 flex-wrap">
           <a href="#suite" class="px-6 py-3 btn-primary text-white rounded-xl shadow-lg font-medium">Explore Product Suite</a>
-          <a href="#contact" class="px-6 py-3 border border-slate-300 rounded-xl hover:border-blue-600 hover:text-blue-700 transition transform hover:scale-105 font-medium flex items-center">
+          <a href="#contact" class="px-6 py-3 border border-white rounded-xl hover:bg-white/20 transition font-medium flex items-center">
             <i class="fas fa-calendar-check mr-2"></i> Book a Demo
           </a>
         </div>
-        <div class="mt-10 flex items-center space-x-4">
-          <div class="flex -space-x-2">
-            <div class="h-10 w-10 rounded-full border-2 border-white bg-blue-600 flex items-center justify-center text-white font-bold">C</div>
-            <div class="h-10 w-10 rounded-full border-2 border-white bg-green-600 flex items-center justify-center text-white font-bold">B</div>
-            <div class="h-10 w-10 rounded-full border-2 border-white bg-purple-600 flex items-center justify-center text-white font-bold">M</div>
-          </div>
-          <p class="text-sm text-slate-600"><span class="font-semibold">10+</span> companies transformed</p>
-        </div>
       </div>
-      <div data-aos="zoom-in" data-aos-delay="300" class="relative">
-        <div class="absolute -top-4 -right-4 h-32 w-32 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-        <div class="absolute -bottom-8 -left-4 h-32 w-32 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
-        <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" alt="AI Manufacturing Dashboard" class="rounded-2xl shadow-xl transform hover:scale-105 transition duration-700" />
-        <div class="absolute bottom-4 left-4 bg-white rounded-lg shadow-md p-3 flex items-center">
-          <div class="h-3 w-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-          <span class="text-sm font-medium">Live data streaming</span>
-        </div>
+      <div class="relative flex justify-center items-center" data-aos="zoom-in" data-aos-delay="300">
+        <img src="logo.png" alt="MFGTech Logo" class="h-48 animate-float drop-shadow-2xl">
+        <div class="absolute -top-10 right-10 h-32 w-32 bg-blue-400/40 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-10 left-10 h-32 w-32 bg-purple-400/40 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
     </div>
   </section>
@@ -596,6 +541,7 @@
   </script>
 </body>
 </html>
+
 
 
 
